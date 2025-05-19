@@ -2,98 +2,721 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Subhash B Gowda</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #fff; color: #333; line-height: 1.6; }
-    header, section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-    header { text-align: center; background-color: #f7f7f7; }
-    header h1 { font-size: 2.5rem; color: #222; }
-    header p { font-size: 1.2rem; margin-top: 10px; }
-    nav a { margin: 0 10px; text-decoration: none; color: #007BFF; font-weight: 600; }
-    h2 { margin-bottom: 20px; font-size: 1.8rem; border-bottom: 2px solid #eee; display: inline-block; }
-    .project, .experience, .education { margin-bottom: 20px; }
-    a { color: #007BFF; text-decoration: none; }
-    .social a { margin-right: 15px; font-size: 1.5rem; color: #444; }
-  </style>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="AI Specialist: Passionate & seasoned developer in Artificial Intelligence.">
+	<meta name="author" content="Atharva Pore">
+	<!-- <meta property='og:url' content='https://atharvapore01.github.io'/> -->
+	<!-- Your thumbnail image URL -->
+	<meta property='og:image'
+		content='https://drive.google.com/file/d/1ocN9qIJbEdyIBGj6jO2oG0Di2Hf8VLy3/view?usp=sharing' />
+	<!-- Set the width and height of your image (logo) -->
+	<meta property='og:image:width' content='120' />
+	<meta property='og:image:height' content='120' />
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:type" content="portfolio">
+
+	<!-- LinkedIn specific tags -->
+	<meta property="og:site_name" content="Atharva Pore - Portfolio" />
+	<meta property="og:locale" content="en_US" />
+	<meta name="theme-color" content="#BD5D38">
+
+	<!--icon-->>
+	<link rel="icon" type="image/x-icon" href="img/ap.ico">
+
+	<title>The Atharva Pore</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom fonts for this template -->
+	<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+		rel="stylesheet">
+	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+	<link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-rREU8/Q2Cy8LMDdP5bEdHR/rG5uNLt1Lw1PbWy6d1Htonl53kM6FucETBpEU1TG1" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+	<!-- Custom styles for this template -->
+	<link href="css/resume.css" rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
-<body>
-  <header>
-    <h1>Subhash B Gowda</h1>
-    <p>Associate Data Engineer | Full Stack Developer | AI Enthusiast</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<body id="page-top">
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Ambitious software engineer skilled in Python, SQL, data analysis, and AI. Experienced in building scalable full stack solutions and deploying modern machine learning workflows. Adaptable learner with strong teamwork and communication skills.</p>
-  </section>
+	<!-- Bootstrap JS and Popper.js -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p><strong>Languages/Tools:</strong> Python, SQL, Git, FastAPI, React, AngularJS, Node.js, Docker, Postman</p>
-    <p><strong>Domains:</strong> Data Science, Web Development, Machine Learning</p>
-  </section>
+	<script>
+		const textArray = ['Atharve Pore', 'AI Software Developer', 'Tech Enthusiast'];
+		let textIndex = 0;
+		let charIndex = 0;
+		const typingTextElement = document.getElementById('dynamic-text');
 
-  <section id="education">
-    <h2>Education</h2>
-    <div class="education">
-      <p><strong>Master of Science in Data Analysis & AI</strong> – Pavol Jozef Šafárik University, Slovakia (2024–Present)</p>
-      <p><strong>Bachelor of Engineering in CSE</strong> – RYMEC, India (2019–2023) | CGPA: 7.8</p>
+		function type() {
+			if (charIndex < textArray[textIndex].length) {
+				typingTextElement.textContent += textArray[textIndex].charAt(charIndex);
+				charIndex++;
+				setTimeout(type, 100); // Adjust typing speed here
+			} else {
+				setTimeout(erase, 1000); // Wait before erasing
+			}
+		}
+
+		function erase() {
+			if (charIndex > 0) {
+				typingTextElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+				charIndex--;
+				setTimeout(erase, 50); // Adjust erasing speed here
+			} else {
+				textIndex = (textIndex + 1) % textArray.length;
+				setTimeout(type, 500); // Wait before typing the next text
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', function () {
+			setTimeout(type, 500); // Start typing after 500ms
+		});
+	</script>
+
+	<script>
+		// Rolling Counters Script
+		function startCounters() {
+			const projectCount = 10; // Replace with your actual project count
+			const codeCount = 100000; // Replace with your actual lines of code
+			const experienceCount = 2; // Replace with your actual years of experience
+
+			const counters = [projectCount, codeCount, experienceCount];
+			const speed = 200; // Adjust the speed of counting (milliseconds)
+
+			counters.forEach((target, index) => {
+				const counterElement = document.getElementById(`${['project', 'code', 'experience'][index]}Count`);
+				const increment = target / speed;
+
+				let currentCount = 0;
+				const updateCount = () => {
+					currentCount += increment;
+					counterElement.textContent = Math.floor(currentCount);
+
+					if (currentCount < target) {
+						requestAnimationFrame(updateCount);
+					} else {
+						counterElement.textContent = target;
+					}
+				};
+
+				updateCount();
+			});
+		}
+
+		function openModal(btn) {
+			var pdfSource = btn.parentNode.parentNode.querySelector('.certificate-image').getAttribute('src');
+			document.getElementById('certificateImage').src = pdfSource;
+			document.getElementById('certificateModal').style.display = 'flex';
+		}
+		// Define closeModal function
+		function closeModal() {
+			var modal = document.getElementById('certificateModal');
+			modal.style.display = 'none';
+
+			// Optionally, reset the image src to clear the image
+			document.getElementById('certificateImage').src = '';
+		}
+
+		// Call the counters when the page is loaded
+		window.addEventListener('load', startCounters);
+
+
+	</script>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+		<a class="navbar-brand js-scroll-trigger" href="#page-top">
+			<span class="d-block d-lg-none">Atharva Pore</span>
+			<span class="d-none d-lg-block">
+				<img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+			</span>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#about">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#education">Education</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#certification">Certifications</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#ongoing-learnings">Ongoing Learnings & Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container-fluid px-4">
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="about">
+  <div class="my-auto">
+    <h1 class="mb-0">Subhash
+      <span class="text-primary">B Gowda</span>
+    </h1>
+    <h4 class="mb-1">Associate Data Engineer & Full Stack Developer</h4>
+
+    <div class="subheading mb-5">Kosice, Slovakia | +421 952 269 487 |
+      <a href="mailto:subhashyuva482@gmail.com">subhashyuva482@gmail.com</a>
     </div>
-  </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience">
-      <p><strong>Software Engineer</strong> – Tata Consultancy Services (2024)<br>Built UI with React for PNC Banking, integrated REST APIs, followed agile practices and optimized performance.</p>
-    </div>
-    <div class="experience">
-      <p><strong>Full Stack Developer</strong> – HRM IT Solutions (2022–2024)<br>Developed UI components with React, integrated Node.js backend, built visa management workflows.</p>
-    </div>
-  </section>
+    <p class="mb-2" align="justify">
+      I am an ambitious and versatile software engineer with a strong foundation in Python, SQL, data engineering, and AI. With experience as a full-stack developer and a passion for continuous learning, I bring a well-rounded skill set to building robust, scalable, and user-friendly applications. I take pride in combining front-end technologies like React and Angular with backend APIs using Node.js and FastAPI, while integrating AI and data science principles where needed.
+    </p>
 
-  <section id="projects">
-    <h2>Projects</h2>
+    <p class="mb-2" align="justify">
+      Currently pursuing my Master’s in Data Analysis and Artificial Intelligence at <a href="https://www.upjs.sk/en/">Pavol Jozef Šafárik University</a>, I aim to bridge the gap between software engineering and intelligent data-driven systems. My academic background includes a Bachelor’s in Computer Science from RYM Engineering College, India, with a strong CGPA of 7.8.
+    </p>
+
+<p class="mb-2" align="justify">
+  I’ve gained valuable professional experience at <a href="https://www.tcs.com" target="_blank"><strong>Tata Consultancy Services (TCS)</strong></a> working on the PNC Banking project, where I contributed to building dynamic React-based UIs and collaborated with backend teams to enhance the customer experience. Prior to that, I served as a full stack developer at <a href="https://www.hrmitsolutions.com/" target="_blank"><strong>HRM IT Solutions</strong></a> in Slovakia, working in agile teams and delivering full-featured web applications.
+</p>
+
+
+    <p class="mb-4" align="justify">
+      My project portfolio includes a facial recognition-based online voting system and a vendor management app using location-aware algorithms. I have also received accolades, including 3rd prize at the IEEE National Project Expo in Mysuru, India. I'm passionate about solving real-world problems through efficient code, clean UI/UX, and smart data use.
+    </p>
+
+    <ul class="list-inline list-social-icons mb-0">
+      <li class="list-inline-item">
+        <a href="https://www.linkedin.com/in/subhash-b-gowda-80b091190/">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://github.com/Subhashbgowda">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="counter-container">
+      <div class="counter-box">
+        <i class='bx bxs-time'></i>
+        <h3><span id="experienceCount">2+</span><br>Years of Experience</h3>
+      </div>
+
+      <div class="counter-box">
+        <i class='bx bxs-book-content'></i>
+        <h3><span id="projectCount">10+</span><br>Key Projects</h3>
+      </div>
+
+      <div class="counter-box">
+        <i class='bx bx-code-block'></i>
+        <h3><span id="codeCount">100,000+</span><br>Lines of Code</h3>
+      </div>
+    </div>
+
+    <div class="cv-button-container flex-column">
+      <li class="list-inline-item">
+        <h4><a href="img\Subhash_CV.pdf" class="cv-button">Download CV</a></h4>
+      </li>
+    </div>
+  </div>
+</section>
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+  <div class="my-auto">
+    <h2 class="mb-5">Experience</h2>
+
+    <!-- TCS Experience -->
+    <div class="resume-item d-flex flex-column mb-5">
+      <div class="resume-item d-flex flex-column flex-md-row">
+        <div class="resume-content mr-auto">
+          <h3 class="mb-0">Frontend Developer</h3>
+          <div class="subheading mb-3">
+            <a href="https://www.tcs.com" target="_blank">Tata Consultancy Services (TCS)</a> – Bangalore, India
+          </div>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">2024 – 2024</span>
+        </div>
+      </div>
+      <h4>1. Developed Responsive Web Interfaces for Financial Applications</h4>
+      <ul>
+        <p align="justify">
+          Contributed to the <strong>PNC Banking project</strong> by developing modular, responsive UI components using React.js, ensuring consistent performance across browsers and devices. Applied reusable component-based design patterns, improving maintainability and scalability of the codebase.
+        </p>
+      </ul>
+
+      <h4>2. Integrated REST APIs and Enhanced User Interactions</h4>
+      <ul>
+        <p align="justify">
+          Collaborated with backend engineers to seamlessly integrate RESTful APIs, enabling secure and efficient data exchange. Focused on improving user experience by implementing real-time data fetching, error handling, and conditional rendering based on API responses.
+        </p>
+      </ul>
+
+      <h4>3. Agile Collaboration and Version Control Practices</h4>
+      <ul>
+        <p align="justify">
+          Worked within an agile team structure, actively participating in daily scrums and sprint reviews. Utilized GitHub for version control, managed code branches and pull requests, and conducted peer code reviews to ensure high-quality releases.
+        </p>
+      </ul>
+    </div>
+
+    <!-- HRM IT Solutions Experience -->
+    <div class="resume-item d-flex flex-column mb-5">
+      <div class="resume-item d-flex flex-column flex-md-row">
+        <div class="resume-content mr-auto">
+          <h3 class="mb-0">Full Stack Developer</h3>
+          <div class="subheading mb-3">
+            <a href="https://www.hrmitsolutions.com/" target="_blank">HRM IT Solutions</a> – Košice, Slovakia
+          </div>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">2022 – 2024</span>
+        </div>
+      </div>
+      <h4>1. Built End-to-End Web Applications with Modern Technologies</h4>
+      <ul>
+        <p align="justify">
+          Developed robust full-stack web solutions for internal and client-facing platforms. Engineered responsive user interfaces using <strong>React.js</strong>, integrated backend services via <strong>Node.js</strong> and <strong>FastAPI</strong>, and managed data through MongoDB and SQL databases.
+        </p>
+      </ul>
+
+      <h4>2. Designed and Implemented RESTful APIs</h4>
+      <ul>
+        <p align="justify">
+          Designed efficient RESTful APIs for CRUD operations and data retrieval, ensuring secure endpoints with role-based access control. Documented APIs using Postman, facilitating seamless handoffs to frontend and QA teams.
+        </p>
+      </ul>
+
+      <h4>3. Enhanced UI/UX and Application Performance</h4>
+      <ul>
+        <p align="justify">
+          Refined UI designs for improved usability, accessibility, and performance using best practices in responsive design. Implemented lazy loading and client-side routing to boost load times and navigation experience.
+        </p>
+      </ul>
+
+      <h4>4. Agile Workflow and DevOps Practices</h4>
+      <ul>
+        <p align="justify">
+          Collaborated in cross-functional agile teams, participated in sprint planning, and delivered frequent updates through CI/CD pipelines. Maintained source code and project progress via Git and GitHub, resolving merge conflicts and conducting peer reviews.
+        </p>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+  <div class="my-auto">
+    <h2 class="mb-5">Education</h2>
+
+    <ul class="nav nav-tabs" id="educationTabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="mastersTab" data-toggle="tab" href="#masters" role="tab"
+          aria-controls="masters" aria-selected="true">Masters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="bachelorTab" data-toggle="tab" href="#bachelor" role="tab"
+          aria-controls="bachelor" aria-selected="false">Bachelor</a>
+      </li>
+    </ul>
+
+    <div class="tab-pane-content">
+      <div class="tab-content" id="educationTabsContent">
+
+        <!-- Master's Degree -->
+        <div class="tab-pane fade show active" id="masters" role="tabpanel" aria-labelledby="mastersTab">
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">
+                <a href="https://www.upjs.sk/en/" target="_blank">Pavol Jozef Šafárik University</a>
+              </h3>
+              <div class="subheading mb-0">Master of Science – Data Analysis and Artificial Intelligence</div>
+              <div class="subheading mb-3">Kosice, Slovakia</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">2024 – Present</span>
+            </div>
+          </div>
+
+          <div class="tab-pane-content">
+            <p align="justify">
+              I am currently pursuing a Master's degree in Data Analysis and Artificial Intelligence at
+              <a href="https://www.upjs.sk/en/" target="_blank">Pavol Jozef Šafárik University</a>, Slovakia.
+              The program equips me with expertise in machine learning, data science, and advanced AI techniques,
+              including practical exposure to real-world datasets and applied statistical modeling.
+            </p>
+            <p align="justify">
+              Through this program, I am strengthening my foundation in algorithmic design, software development,
+              data visualization, and analytical reasoning. This academic journey is integral to shaping my capability
+              to design data-driven AI systems with both efficiency and impact.
+            </p>
+            <p><strong>Relevant Focus Areas:</strong></p>
+            <ul>
+              <li>Artificial Intelligence & Machine Learning</li>
+              <li>Big Data and Data Mining</li>
+              <li>Statistical Modeling & Predictive Analytics</li>
+              <li>Intelligent Systems and Data Visualization</li>
+              <li>Software Engineering for AI Applications</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bachelor's Degree -->
+        <div class="tab-pane fade" id="bachelor" role="tabpanel" aria-labelledby="bachelorTab">
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">
+                <a href="https://rymec.edu.in/" target="_blank">Rao Bahaddur Y Mahabaleshwarappa Engineering College</a>
+              </h3>
+              <div class="subheading mb-3">Bachelor of Engineering – Computer Science and Engineering</div>
+              <div class="subheading mb-0">Bellary, India</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">2019 – 2023</span>
+            </div>
+          </div>
+
+          <div class="tab-pane-content">
+            <p align="justify">
+              I completed my undergraduate degree in Computer Science and Engineering at
+              <a href="https://rymec.in" target="_blank">RYM Engineering College</a>, India, graduating with a CGPA of 7.8.
+              The program provided a strong foundation in software development, computer systems, and AI technologies.
+            </p>
+            <p align="justify">
+              My final year capstone project focused on building an
+              <strong>Online Voting System with Facial Recognition</strong>,
+              integrating real-time face detection and authentication using OpenCV and machine learning algorithms.
+              The system enhanced voting integrity and prevented duplication through biometric verification.
+            </p>
+            <p><strong>Key Academic Areas:</strong></p>
+            <ul>
+              <li>Data Structures and Algorithms</li>
+              <li>Operating Systems and Database Management</li>
+              <li>Web Development with MERN Stack</li>
+              <li>Computer Networks and Cloud Computing</li>
+              <li>Artificial Intelligence and Computer Vision</li>
+            </ul>
+            <p align="justify">
+              I was also awarded <strong>3rd Prize at the IEEE National Project Expo (Mysuru)</strong>
+              for my innovation in secure digital election systems using facial recognition.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+  <div class="my-auto">
+    <h2 class="mb-5">Skills</h2>
+
+    <h3>Programming Languages</h3>
+    <ul class="list-inline list-icons">
+      <li class="list-inline-item"><div class="icon-box"><i class="devicons devicons-python"></i></div></li>
+      <li class="list-inline-item"><div class="icon-box"><i class="devicons devicons-javascript"></i></div></li>
+      <li class="list-inline-item"><div class="icon-box"><i class="devicons devicons-java"></i></div></li>
+     </ul>
+
+    <h3>Technologies and Packages</h3>
+    <ul class="list-inline list-icons">
+      <li class="list-inline-item"><div class="icon-box"><i class="devicon-react-original-wordmark"></i></div></li>
+      <li class="list-inline-item"><div class="icon-box"><i class="devicon-angularjs-plain"></i></div></li>
+      <li class="list-inline-item"><div class="icon-box"><i class="devicon-nodejs-plain-wordmark"></i></div></li>
+      <li class="list-inline-item"><div class="icon-box"><i class="devicon-fastapi-plain"></i></div></li>
+      <li class="list-inline-item"><div class="icon-box"><i class="devicon-opencv-plain-wordmark"></i></div></li>
+      <li class="list-inline-item"><div class="icon-box"><i class="devicon-pandas-original-wordmark"></i></div></li>
+     </ul>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<h3>Developer Tools</h3>
+<ul class="list-inline list-icons">
+  <li class="list-inline-item">
+    <div class="icon-box">
+      <i class="devicon-git-plain-wordmark colored"></i>
+    </div>
+  </li>
+  <li class="list-inline-item">
+    <div class="icon-box">
+      <i class="devicon-github-original-wordmark colored"></i>
+    </div>
+  </li>
+  <li class="list-inline-item">
+    <div class="icon-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" height="40">
+    </div>
+  </li>
+  <li class="list-inline-item">
+    <div class="icon-box">
+      <i class="devicon-visualstudio-plain colored"></i>
+    </div>
+  </li>
+  <li class="list-inline-item">
+    <div class="icon-box">
+      <i class="devicon-vscode-plain colored"></i>
+    </div>
+  </li>
+</ul>
+
+<h3>Databases</h3>
+<ul class="list-inline list-icons">
+  <li class="list-inline-item">
+    <div class="icon-box">
+      <i class="devicon-microsoftsqlserver-plain-wordmark colored"></i>
+    </div>
+  </li>
+  <li class="list-inline-item">
+    <div class="icon-box">
+      <i class="devicon-mysql-plain-wordmark colored"></i>
+    </div>
+  </li>
+</ul>
+
+
+    <h3>Operating Systems</h3>
+    <ul class="list-inline list-icons">
+      <li class="list-inline-item"><div class="icon-box"><i class="devicon-windows8-original"></i></div></li>
+      <li class="list-inline-item"><div class="icon-box"><i class="devicon-linux-plain"></i></div></li>
+    </ul>
+  </div>
+</section>
+
+
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
+  <div class="my-auto">
+    <h2 class="mb-5">Projects</h2>
+
     <div class="project">
-      <p><strong>HRM – Visa Management System</strong><br>Enterprise web application for visa workflow automation developed for HRM IT Solutions. <a href="https://github.com/Subhashbgowda/HRM" target="_blank">View Code</a></p>
+      <h3>1. Whale Stack – Vendor Management Application</h3>
+      <p class="project-info">Duration: 2023</p>
+      <p class="project-description" align="justify">
+        Designed and developed a full-stack vendor management application to optimize order assignments based on proximity and vendor ratings. Employed <strong>React.js</strong> for building dynamic and responsive user interfaces, and <strong>Node.js</strong> with <strong>Express</strong> for backend RESTful APIs. Integrated geolocation-based algorithms to calculate vendor proximity and utilized <strong>MongoDB</strong> for data storage and indexing. Implemented role-based access control, data validation pipelines, and efficient data retrieval for real-time decision-making.
+      </p>
     </div>
-    <div class="project">
-      <p><strong>ML Models</strong><br>Collection of ML models including regression and classification with evaluation and preprocessing pipelines. <a href="https://github.com/Subhashbgowda/ML_models" target="_blank">View Code</a></p>
-    </div>
-    <div class="project">
-      <p><strong>Datasets Repository</strong><br>Curated data collections for Titanic survival, customer churn, loan prediction, etc. <a href="https://github.com/Subhashbgowda/Datasets" target="_blank">View Code</a></p>
-    </div>
-    <div class="project">
-      <p><strong>Flask Docker App</strong><br>Dockerized Flask backend app showing REST API deployment. <a href="https://github.com/Subhashbgowda/flask-docker-app" target="_blank">View Code</a></p>
-    </div>
-    <div class="project">
-      <p><strong>Online Voting System (Facial Recognition)</strong><br>Secure platform using OpenCV-based authentication for one-person-one-vote guarantee.</p>
-    </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:subhashyuva482@gmail.com">subhashyuva482@gmail.com</a></p>
-    <p><strong>Phone:</strong> +421 952269487</p>
-    <p><strong>Location:</strong> Kosice, Slovakia</p>
-    <div class="social">
-      <a href="https://linkedin.com/in/subhash-b-gowda-80b091190" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/Subhashbgowda" target="_blank"><i class="fab fa-github"></i></a>
+    <div class="project">
+      <h3>2. Online Voting System Using Facial Recognition</h3>
+      <p class="project-info">Duration: 2023</p>
+      <p class="project-description" align="justify">
+        Engineered a secure, AI-powered online voting platform as part of final-year academic research. Utilized <strong>OpenCV</strong> and <strong>Haar Cascades</strong> in conjunction with <strong>machine learning algorithms</strong> for facial detection and verification, replacing traditional authentication. Implemented a voting logic backend with role-specific modules (admin/voter), a real-time monitoring system, and data encryption. Enhanced security by preventing impersonation and ensuring one-person-one-vote fidelity.
+      </p>
     </div>
-  </section>
+
+    <div class="project">
+      <h3>3. PNC Banking UI – Tata Consultancy Services</h3>
+      <p class="project-info">Duration: 2024</p>
+      <p class="project-description" align="justify">
+        Contributed to a financial services project as a frontend engineer, building responsive UI components for PNC Banking using <strong>React.js</strong>. Collaborated with backend developers to integrate RESTful APIs, conducted performance tuning, and participated in agile sprints. Improved user experience by implementing reusable components, state management, and form validations. Followed component-based architecture and ensured cross-browser compatibility.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>4. Full Stack Development – HRM IT Solutions</h3>
+      <p class="project-info">Duration: 2022 – 2024</p>
+      <p class="project-description" align="justify">
+        Worked as a full stack developer focusing on building UI-rich web applications. Used <strong>React.js</strong> to develop responsive and performance-optimized frontend components and integrated them with backend services through REST APIs. Participated in end-to-end development cycles, contributed to version control with <strong>Git</strong>, and followed agile methodologies to ensure sprint-based delivery and testing. Prioritized clean code practices, modular design, and team collaboration.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>5. Customer Churn Prediction Using Neural Networks</h3>
+      <p class="project-info">Duration: 2024</p>
+      <p class="project-description" align="justify">
+        Built a predictive model to classify customer churn using a <strong>feedforward neural network</strong> on the Telco dataset. Applied <strong>data preprocessing</strong> techniques such as one-hot encoding and feature scaling. Developed and trained the model using <strong>TensorFlow</strong> and <strong>Keras</strong>, achieving an accuracy of 80.27% on test data. Conducted performance evaluation using learning curves and confusion matrix, and explored enhancements such as dropout regularization and SHAP-based model interpretability.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+		<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="certification">
+			<div class="my-auto">
+				<h2 class="mb-5">Certifications</h2>
+				<div class="certificate-grid">
+					<div class="certificate-box">
+						<img class="certificate-image" src="img/certificate.png"
+							alt="TENSORFLOW-KERAS-BOOTCAMP_Certificate">
+						<div class="certificate-info">
+							<h3>TENSORFLOW-KERAS BOOTCAMP</h3>
+							<p>Given By: OpenCV University</p>
+							<p>Completion Month: January 2024</p>
+							<button class="view-certificate-btn" onclick="openModal(this)">View Certificate</button>
+						</div>
+					</div>
+					<!-- <div class="certificate-box">
+						<img class="certificate-image" src="img/design_patterns.png" alt="design_patterns">
+						<div class="certificate-info">
+							<h3>Python: Design Patterns</h3>
+							<p>Given By: LinkedIn Learning</p>
+							<p>Completion Month: January 2024</p>
+							<button class="view-certificate-btn" onclick="openModal(this)">View Certificate</button>
+						</div>
+					</div>
+
+					<div class="certificate-box">
+						<img class="certificate-image"
+							src="img/CertificateOfCompletion_HandsOn_AI_BuildGenerativeLanguageModel_from_Scratch.png"
+							alt="LLM">
+						<div class="certificate-info">
+							<h3>Hands-On AI: Build a Generative Language Model from Scratch</h3>
+							<p>Given By: LinkedIn Learning</p>
+							<p>Completion Month: January 2024</p>
+							<button class="view-certificate-btn" onclick="openModal(this)">View Certificate</button>
+						</div>
+					</div>
+
+					<div class="certificate-box">
+						<img class="certificate-image" src="img/PCEP.png" alt="PCEP">
+						<div class="certificate-info">
+							<h3>Proficiency: Python Programming</h3>
+							<p>Given By: Python Institute</p>
+							<p>Completion Month: February 2022</p>
+							<button class="view-certificate-btn" onclick="openModal(this)">View Certificate</button>
+						</div>
+					</div>
+
+					<div class="certificate-box">
+						<img class="certificate-image" src="img/KNIME.png" alt="KNIME">
+						<div class="certificate-info">
+							<h3>KNIME Analytics Platform</h3>
+							<p>Given By: KNIME</p>
+							<p>Completion Month: May 2022</p>
+							<button class="view-certificate-btn" onclick="openModal(this)">View Certificate</button>
+						</div>
+					</div>
+
+					<div class="certificate-box">
+						<img class="certificate-image" src="img/RTR.png" alt="RTR">
+						<div class="certificate-info">
+							<h3>Real-Time Rendering</h3>
+							<p>Given By: AstroMediComp</p>
+							<p>Completion Month: August 2020</p>
+							<button class="view-certificate-btn" onclick="openModal(this)">View Certificate</button>
+						</div>
+					</div>
+					<div class="certificate-box">
+						<img class="certificate-image" src="img/opencv.png" alt="RTR">
+						<div class="certificate-info">
+							<h3>OpenCV-Python</h3>
+							<p>Given By: Udemy</p>
+							<p>Completion Month: June 2020</p>
+							<button class="view-certificate-btn" onclick="openModal(this)">View Certificate</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal -->
+			<!-- Modal -->
+			<div class="modal" id="certificateModal">
+				<div class="modal-content">
+					<span class="close-btn" onclick="closeModal()">&times;</span>
+					<img id="certificateImage" class="modal-content img" src="" alt="Certificate Image">
+				</div>
+			</div> -->
+
+		</section>
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="ongoing-learnings">
+  <div class="my-auto">
+    <h2 class="mb-5">Ongoing Learnings & Projects</h2>
+
+    <div class="project">
+      <h3>Fetch.ai Agent Development</h3>
+      <p class="project-info" align="justify">
+        Exploring decentralized autonomous agents using Fetch.ai framework to build intelligent, collaborative systems for real-world applications.
+      </p>
+      <p class="project-info">
+        Tools & Technologies: Python, Fetch.ai SDK, Multi-agent systems, Blockchain
+      </p>
+      <p class="project-info">
+        <a href="https://fetch.ai" target="_blank" class="watch-video-btn"><i class='bx bx-link'></i> Learn More</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+		<!-- <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="publications">
+			<div class="my-auto">
+				<h2 class="mb-5">Publications</h2>
+
+				<div class="publication">
+					<h3>1. AstroSat science support cell</h3>
+					<p class="publication-info">Authors: Roy, J.;...; Pore, A.</p>
+					<p class="publication-info" align="justify">Journal: Journal of Astrophysics and Astronomy, Volume
+						42, Issue 2,
+						article id.28</p>
+					<p class="publication-info">Published Date: October 2021</p>
+					<p class="publication-info">Link: <a
+							href="https://ui.adsabs.harvard.edu/abs/2021JApA...42...28R/abstract" target="_blank"
+							class="watch-video-btn"><i class='bx bx-spreadsheet'></i> Read Paper</a></p>
+				</div>
+
+				<div class="publication">
+					<h3>2. Interactive Projection Using 3D Gesture Recognition</h3>
+					<p class="publication-info">Authors: Paranjape C.;...; Pore A.</p>
+					<p class="publication-info" align="justify">Journal: International Journal of Scientific and
+						Engineering Research,
+						Volume 9, Issue 5</p>
+					<p class="publication-info">Published Date: May 2018</p>
+					<p class="publication-info">Link: <a
+							href="https://www.ijser.org/researchpaper/Interactive-Projection-Using-3D-gesture-Recognition.pdf"
+							target="_blank" class="watch-video-btn"><i class='bx bx-spreadsheet'></i> Read Paper</a></p>
+				</div>
+
+			</div>
+		</section> -->
+
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for this template -->
+	<script src="js/resume.min.js"></script>
+
 </body>
 
 </html>
